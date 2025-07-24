@@ -14,6 +14,5 @@ public class tempEx02 {
 
         System.out.printf("스왑 후 : x = %d, y = %d, temp = %d", x, y, temp);
 
-
     }
 }

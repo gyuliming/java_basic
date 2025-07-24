@@ -14,5 +14,14 @@ public class VariableEx01 {
 
         // 4. 변수 result의 값을 콘솔에 출력
         System.out.println(result);
+
+        int x = 0xB3;
+        int y = 0x2A0F;
+
+        System.out.printf("%d %d\n", x, y);
+
+        byte var1 = -128;
+        byte var2 = (byte) 128;
+        System.out.println(var2);
     }
 }
