@@ -1,5 +1,7 @@
 package day03;
 
+import java.util.Scanner;
+
 public class PrintEx {
 
     public static void main(String[] args) {
@@ -43,5 +45,22 @@ public class PrintEx {
 
         // 특수문자 \t, \n, %%
         System.out.printf("소금물의 농도: %d %%\n", 35);
+
+        // 상품의 가격: 5000원
+        System.out.printf("상품의 가격: %d원\n", 5000);
+
+        // 상품의 가격: ___5000원
+        System.out.printf("상품의 가격: %7d원\n", 5000);
+
+        // 상품의 가격: 005000원
+        System.out.printf("상품의 가격: %06d원\n", 5000);
+
+        // 반지름을 입력하세요. 예) 10 입력받기
+        // 반지름이 10인 원의 넓이: 314.6
+        Scanner sc = new Scanner(System.in);
+        System.out.print("반지름을 입력하세요. ");
+        int r = sc.nextInt();
+        System.out.printf("반지름이 %d인 원의 넓이: %.1f", r, r * r * Math.PI);
+
     }
 }
