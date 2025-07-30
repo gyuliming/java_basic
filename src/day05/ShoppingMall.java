@@ -6,14 +6,14 @@ public class ShoppingMall {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String name, phone;
+        String userName, userPhone;
         int num;
 
         // 개인 정보 입력
         System.out.print("당신의 이름을 입력하세요 : ");
-        name = sc.nextLine();
+        userName = sc.nextLine();
         System.out.print("연락처를 입력하세요 : ");
-        phone = sc.nextLine();
+        userPhone = sc.nextLine();
 
         // 메뉴판
         do {
@@ -33,8 +33,8 @@ public class ShoppingMall {
             switch (num) {
                 case 1:
                     System.out.println("현재 고객 정보:");
-                    System.out.println("이름: " + name);
-                    System.out.println("연락처: " + phone);
+                    System.out.println("이름: " + userName);
+                    System.out.println("연락처: " + userPhone);
                     break;
 
                 case 2:

@@ -21,6 +21,8 @@ public class 선택제어문_연습문제7 {
             case 3:
                 System.out.println("삭제를 선택하셨습니다.");
                 break;
+            default:
+                System.out.println("1~3의 숫자를 입력해주세요.");
         }
     }
 }
