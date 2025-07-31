@@ -4,53 +4,6 @@ import java.util.Scanner;
 
 public class JavaBasic9 {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        boolean step = true; // while 문 조건
-        int[] scores = null; // null로 받아서 배열 할당X
-
-        while (step) {
-            menu(); // 메뉴 메소드 호출
-            String input = sc.nextLine();
-
-            switch (input) {
-                // 1번 선택 -> 학생 수 입력
-                case "1":
-                    scores = studentNum(sc);
-                    break;
-
-                // 2번 선택 -> 점수 입력(scores 배열이 비어있으면 if문 수행)
-                case "2":
-                    if (scores == null) {
-                        System.out.println("학생 수를 입력하세요.");
-                    } else {
-                        scores = inputScore(sc, scores);
-                    }
-                    break;
-
-                // 3번 선택 -> 점수 리스트 메소드 호출
-                case "3":
-                    scoreList(scores);
-                    break;
-
-                // 4번 선택 -> 점수 분석(최고 점수, 평균)
-                case "4":
-                    showMaxAndAvg(scores);
-                    break;
-
-                // 종료
-                case "5":
-                    exit();
-                    step = false;
-                    break;
-
-                default:
-                    System.out.println("1~5 숫자만 입력해주세요.");
-                    System.out.println();
-            }
-        }
-    }
-
     // 메뉴 메소드
     public static void menu() {
         System.out.println("-----------------------------------------------------------");
@@ -111,5 +64,51 @@ public class JavaBasic9 {
     // 종료 메소드
     public static void exit() {
         System.out.println("프로그램 종료");
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        boolean step = true; // while 문 조건
+        int[] scores = null; // null로 받아서 배열 할당X
+
+        while (step) {
+            menu(); // 메뉴 메소드 호출
+            String input = sc.nextLine();
+
+            switch (input) {
+                // 1번 선택 -> 학생 수 입력
+                case "1":
+                    scores = studentNum(sc);
+                    break;
+
+                // 2번 선택 -> 점수 입력(scores 배열이 비어있으면 if문 수행)
+                case "2":
+                    if (scores == null) {
+                        System.out.println("학생 수를 입력하세요.");
+                    } else {
+                        scores = inputScore(sc, scores);
+                    }
+                    break;
+
+                // 3번 선택 -> 점수 리스트 메소드 호출
+                case "3":
+                    scoreList(scores);
+                    break;
+
+                // 4번 선택 -> 점수 분석(최고 점수, 평균)
+                case "4":
+                    showMaxAndAvg(scores);
+                    break;
+
+                // 종료
+                case "5":
+                    exit();
+                    step = false;
+                    break;
+
+                default:
+                    System.out.println("1~5 숫자만 입력해주세요.");
+            }
+        }
     }
 }
