@@ -6,12 +6,12 @@ public class JavaBasic1 {
 
         int result = 100 - 20;
 
-        int score1 = 0;
-        switch (grade) {
-            case "A" -> score1 = 100;
-            case "B" -> score1 = result;
-            default -> score1 = 60;
-        }
+        int score1 = switch (grade) {
+            case "A" -> 100;
+            case "B" -> result;
+            default -> 60;
+        };
+
         System.out.println(score1);
     }
 }

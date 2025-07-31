@@ -8,7 +8,7 @@ public class JavaBasic4 {
 
             for (int j = 1; j <= 10; j++) {
                 if (4 * i + 5 * j == 60) {
-                    System.out.printf("(%d, %d)\n", i, j);
+                    System.out.printf("(x, y) = (%d, %d)\n", i, j);
                 }
             }
 
