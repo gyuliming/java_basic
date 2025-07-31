@@ -11,22 +11,22 @@ public class JavaBasic8 {
 
         while (step) {
             menu();
-            int num = sc.nextInt();
+            String input = sc.nextLine();
 
-            switch (num) {
-                case 1:
+            switch (input) {
+                case "1":
                     balance = deposit(sc, balance);
                     break;
 
-                case 2:
+                case "2":
                     balance = withdraw(sc, balance);
                     break;
 
-                case 3:
+                case "3":
                     checkBalance(balance);
                     break;
 
-                case 4:
+                case "4":
                     System.out.println("프로그램 종료");
                     step = false;
                     break;
@@ -36,8 +36,6 @@ public class JavaBasic8 {
                     System.out.println();
             }
         }
-
-
     }
 
     public static void menu() {
@@ -49,7 +47,8 @@ public class JavaBasic8 {
 
     public static int deposit(Scanner sc, int balance) {
         System.out.print("예금액>");
-        int money = sc.nextInt();
+        String input = sc.nextLine();
+        int money = Integer.parseInt(input);
         balance += money;
         System.out.println();
         return balance;
@@ -57,7 +56,8 @@ public class JavaBasic8 {
 
     public static int withdraw(Scanner sc, int balance) {
         System.out.print("출금액>");
-        int money = sc.nextInt();
+        String input = sc.nextLine();
+        int money = Integer.parseInt(input);
 
         if (money > balance) System.out.println("잔액이 부족합니다.");
         else balance -= money;
@@ -70,7 +70,4 @@ public class JavaBasic8 {
         System.out.printf("잔고>%d\n", balance);
         System.out.println();
     }
-
 }
-
-
