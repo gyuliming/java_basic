@@ -22,7 +22,6 @@ public class DoubleArrayEx01 {
         scores[2][2] = 90;
 
         // 각 학생들의 국어, 영어, 수학 점수와 총점과 평균을 학생별로 출력
-
         System.out.printf("%8s 국어 영어 수학 총점 평균\n", "");
         for (int i = 0; i < scores.length; i++) {
             int sum = 0; // 총점
