@@ -26,11 +26,19 @@ public class Account {
     }
 
     public void setBalanceDeposit(int money) {
-        if (MIN_BALANCE <= money && money <= MAX_BALANCE) this.balance += money;
+        if (MIN_BALANCE <= money && money <= MAX_BALANCE) {
+            this.balance += money;
+            System.out.println("결과 : 입금을 완료했습니다.");
+        }
+        else System.out.println("0~1,000,000의 금액만 입력해주세요.");
     }
 
     public void setBalanceWithdraw(int money) {
-        if (MIN_BALANCE <= money && money <= MAX_BALANCE) this.balance -= money;
+        if (MIN_BALANCE <= money && money <= MAX_BALANCE) {
+            this.balance -= money;
+            System.out.println("결과 : 출금을 완료했습니다.");
+        }
+        else System.out.println("0~1,000,000의 금액만 입력해주세요.");
     }
 
     public int getBalance() {

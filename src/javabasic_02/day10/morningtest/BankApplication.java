@@ -32,6 +32,11 @@ public class BankApplication {
         System.out.print("초기 입금액 : "); // 계산을 위해서 정수로 형변환
         int balance = Integer.parseInt(sc.nextLine());
 
+        if (balance < 0) {
+            System.out.println("정확한 금액을 입력해주세요.");
+            return;
+        }
+
         // 새로운 계좌 생성
         Account newAccount = new Account(accountNo, owner, balance);
         accounts[accCount] = newAccount;
@@ -67,22 +72,23 @@ public class BankApplication {
 
         System.out.print("계좌번호 : ");
         String accountNum = sc.nextLine();
-        int money = 0;
-        while (true) {
-            System.out.print("예금액 : ");
-            money = Integer.parseInt(sc.nextLine());
+        if (accCount == 0) {
+            System.out.println("계좌를 개설해주세요.");
+            return;
+        }
 
-            if (money < 0) System.out.println("정확한 금액을 입력해주세요.");
-            else break;
+        System.out.print("예금액 : ");
+        int money = Integer.parseInt(sc.nextLine());
+        if (money < 0) {
+            System.out.println("정확한 금액을 입력해주세요.");
+            return;
         }
 
         for (int i = 0; i < accCount; i++) {
             if (accountNum.equals(accounts[i].getAccountNo())) {
-                System.out.printf("계좌번호 %s에 %d원을 예금했습니다.\n", accounts[i].getAccountNo(), money);
                 accounts[i].setBalanceDeposit(money);
             }
-
-            else System.out.println("해당 계좌가 존재하지 않습니다.\n");
+            else System.out.println("해당 계좌가 존재하지 않습니다.");
         }
     }
 
@@ -97,13 +103,21 @@ public class BankApplication {
 
         System.out.print("계좌번호 : ");
         String accountNum = sc.nextLine();
+        if (accCount == 0) {
+            System.out.println("계좌를 개설해주세요.");
+            return;
+        }
+
         System.out.print("출금액 : ");
         int money = Integer.parseInt(sc.nextLine());
+        if (money < 0) {
+            System.out.println("정확한 금액을 입력해주세요.");
+            return;
+        }
 
         for (int i = 0; i < accCount; i++) {
             if (accountNum.equals(accounts[i].getAccountNo())) {
                 if (accounts[i].getBalance() > money) {
-                    System.out.printf("계좌번호 %s에서 %d원을 출금했습니다.\n", accounts[i].getAccountNo(), money);
                     accounts[i].setBalanceWithdraw(money);
                 } else System.out.println("잔액이 부족합니다.");
             } else System.out.println("해당 계좌가 존재하지 않습니다.");
