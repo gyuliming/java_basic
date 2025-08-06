@@ -72,8 +72,10 @@ public class BankApplication {
 
         System.out.print("계좌번호 : ");
         String accountNum = sc.nextLine();
-        if (accCount == 0) {
-            System.out.println("계좌를 개설해주세요.");
+
+        Account account = findAccount(accountNum);
+        if (account == null) {
+            System.out.println("해당 계좌가 존재하지 않습니다.");
             return;
         }
 
@@ -84,12 +86,7 @@ public class BankApplication {
             return;
         }
 
-        for (int i = 0; i < accCount; i++) {
-            if (accountNum.equals(accounts[i].getAccountNo())) {
-                accounts[i].setBalanceDeposit(money);
-            }
-            else System.out.println("해당 계좌가 존재하지 않습니다.");
-        }
+        account.setBalanceDeposit(money);
     }
 
 
@@ -103,8 +100,10 @@ public class BankApplication {
 
         System.out.print("계좌번호 : ");
         String accountNum = sc.nextLine();
-        if (accCount == 0) {
-            System.out.println("계좌를 개설해주세요.");
+
+        Account account = findAccount(accountNum);
+        if (account == null) {
+            System.out.println("해당 계좌가 존재하지 않습니다.");
             return;
         }
 
@@ -115,13 +114,12 @@ public class BankApplication {
             return;
         }
 
-        for (int i = 0; i < accCount; i++) {
-            if (accountNum.equals(accounts[i].getAccountNo())) {
-                if (accounts[i].getBalance() > money) {
-                    accounts[i].setBalanceWithdraw(money);
-                } else System.out.println("잔액이 부족합니다.");
-            } else System.out.println("해당 계좌가 존재하지 않습니다.");
+        if (account.getBalance() < money) {
+            System.out.println("잔액이 부족합니다.");
+            return;
         }
+
+        account.setBalanceWithdraw(money);
     }
 
     // 5. 프로그램 종료 기능 :
@@ -133,6 +131,17 @@ public class BankApplication {
                 """);
         run = false;
     }
+
+
+    private static Account findAccount(String accountNum) {
+        for (int i = 0; i < accCount; i++) {
+            if (accounts[i].getAccountNo().equals(accountNum)) {
+                return accounts[i];
+            }
+        }
+        return null;
+    }
+
 
     // BankApplication 시작
     public static void main(String[] args) {

@@ -19,7 +19,7 @@ public class ArrayCopyEx {
 
         int[] systemArray1 = new int[oldArray.length * 2];
 
-        // System.arraycopy() 복사
+        // System.arraycopy() 복사 : 원본, 시작 인덱스, 대상 배열, 대상 배열 인덱스, 복사할 요소 개수
         System.arraycopy(oldArray, 0, systemArray1, 0, oldArray.length);
         System.out.println();
 
