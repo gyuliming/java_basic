@@ -4,6 +4,7 @@ public abstract class Beverage {
     private String name;
     protected int price;
 
+
     public Beverage(String name) {
         this.name = name;
     }
@@ -27,6 +28,5 @@ public abstract class Beverage {
     public abstract void calcPrice();
 
     public void print() {
-        System.out.println(name + "이며, 가격은 " + price);
     }
 }
