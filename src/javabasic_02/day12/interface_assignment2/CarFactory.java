@@ -7,7 +7,7 @@ public class CarFactory extends Factory implements IWorkingTogether {
 
     @Override
     public int workTogether(IWorkingTogether partner) {
-        return makeProducts('B');
+        return ((CarFactory) partner).makeProducts('B');
     }
 
     @Override
@@ -16,7 +16,7 @@ public class CarFactory extends Factory implements IWorkingTogether {
             case 'A' -> getWorkingTime() * 3;
             case 'B' -> getWorkingTime() * 2;
             case 'C' -> getWorkingTime() * 1;
-            default -> getWorkingTime() * 0;
+            default -> 0;
         };
     }
 

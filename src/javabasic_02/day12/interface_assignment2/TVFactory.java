@@ -8,7 +8,7 @@ public class TVFactory extends Factory implements IWorkingTogether {
 
     @Override
     public int workTogether(IWorkingTogether partner) {
-        return makeProducts('C');
+        return ((TVFactory) partner).makeProducts('C');
     }
 
     @Override

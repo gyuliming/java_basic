@@ -1,5 +1,7 @@
 package javabasic_02.day12.interface_assignment2;
 
+import javabasic_02.day11.inheritance.sec05.exam02.Car;
+
 public class FactoryExample {
 	
 	public static void main(String[] args) {
@@ -33,7 +35,13 @@ public class FactoryExample {
 
 			System.out.println("* " + mainFactory.getFactoryName() + " 공장의 하루 생산량과 파트너 공장 협력 시 추가 생산량은 다음과 같다.");
 			System.out.printf("1. 하루 생산량 = %d\n", mainFactory.makeProducts(mainFactorySkill));
-			System.out.printf("2. 파트너 공장 [%s] 협력시 추가 생산량 = %d\n", mainFactory.name, partner.workTogether(partner));
+			if (mainFactory instanceof CarFactory) {
+				CarFactory factory = (CarFactory) mainFactory;
+				System.out.printf("2. 파트너 공장 [%s] 협력 시 추가 생산량 = %d\n", ((Factory) partner).getFactoryName(), factory.workTogether(partner));
+			} else if(mainFactory instanceof TVFactory) {
+				TVFactory factory = (TVFactory) mainFactory;
+				System.out.printf("2. 파트너 공장 [%s] 협력 시 추가 생산량 = %d\n", ((TVFactory) partner).getFactoryName(), factory.workTogether(partner));
+			}
 			System.out.println("--------------------------------------------------------------");
 
 	}

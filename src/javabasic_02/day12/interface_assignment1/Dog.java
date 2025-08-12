@@ -7,7 +7,7 @@ public class Dog extends Animal {
 
     @Override
     void run(int hours) {
-        distance = speed * (hours / 2.0);
+        distance += (double) speed * hours / 2;
     }
 
 
