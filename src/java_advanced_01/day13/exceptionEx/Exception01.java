@@ -34,3 +34,4 @@ public class Exception01 {
 // 예외 처리
 // 1. try-catch
 // 2. throws
+

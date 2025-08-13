@@ -3,26 +3,31 @@ package java_advanced_01.day13.exception_assignment3;
 
 public class CellPhoneMain {
  
-	public static void main(String[] args) { 
-		CellPhone myPhone = new CellPhone("SCH-600");
-		
-		myPhone.charge( 20 );  //20분간 충전을 한다.
-		myPhone.printBattery();
-		
-		myPhone.call( 300 );  //300분간 통화를 한다.
-		myPhone.printBattery();
-		
-		myPhone.charge( 50 );  //50분간 충전을 한다.
-		myPhone.printBattery();
-		
-		myPhone.call( 40 );  //40분간 통화를 한다.
-		myPhone.printBattery();
-		
-		
-		myPhone.call( -20 );  //통화시간이 잘못 입력되었다.
-		
-		
-		CellPhone yourPhone = new CellPhone("SCH-600");
+	public static void main(String[] args) {
+        CellPhone myPhone = null;
+		myPhone = new CellPhone("SCH-600");
+
+        try {
+            myPhone.charge( 20 );  //20분간 충전을 한다.
+            myPhone.printBattery();
+
+            myPhone.call( 300 );  //300분간 통화를 한다.
+            myPhone.printBattery();
+
+            myPhone.charge( 50 );  //50분간 충전을 한다.
+            myPhone.printBattery();
+
+            myPhone.call( 40 );  //40분간 통화를 한다.
+            myPhone.printBattery();
+
+
+            myPhone.call( -20 );  //통화시간이 잘못 입력되었다.
+        } catch (IllegalArgumentException e) {
+			System.out.println(e.getMessage());
+        }
+
+
+        CellPhone yourPhone = new CellPhone("SCH-600");
 		
 		if( myPhone.equals(yourPhone) ) {
 			System.out.println("동일 모델입니다.");

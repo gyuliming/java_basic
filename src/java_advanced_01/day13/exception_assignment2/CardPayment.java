@@ -22,7 +22,7 @@ public class CardPayment extends Payment {
                 상품가격 : %d
                 신용카드번호 : %s
                 할부개월 : %d
-                """, getShopName(), getProductName(), getProductPrice(), this.cardNumber, this.monthlyInstallment);
+                """, this.shopName, this.productName, this.productPrice, this.cardNumber, this.monthlyInstallment);
     }
 
     @Override

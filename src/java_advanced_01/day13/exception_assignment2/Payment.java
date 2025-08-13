@@ -11,15 +11,4 @@ public abstract class Payment implements Payable {
         this.productPrice = productPrice;
     }
 
-    public String getShopName() {
-        return shopName;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public long getProductPrice() {
-        return productPrice;
-    }
 }

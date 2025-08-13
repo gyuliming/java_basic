@@ -8,17 +8,17 @@ public class CellPhone {
         this.model = model;
     }
 
-    void call(int time) {
+    void call(int time) throws IllegalArgumentException {
+        if (time < 0) throw new IllegalArgumentException("통화시간입력오류");
         this.battery -= time * 0.5;
         if (this.battery <= 0) this.battery = 0;
-        else if (time < 0) throw new IllegalArgumentException("통화시간입력오류");
         System.out.printf("통화 시간 : %d분\n", time);
     }
 
-    void charge(int time) {
+    void charge(int time) throws IllegalArgumentException {
+        if (time < 0) throw new IllegalArgumentException("충전시간입력오류");
         this.battery += time * 3;
         if (this.battery >= 100) this.battery = 100;
-        else if (time < 0) throw new IllegalArgumentException("충전시간입력오류");
         System.out.printf("충전 시간 : %d분\n", time);
     }
 
