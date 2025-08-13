@@ -1,0 +1,27 @@
+<예외처리>
+1. 4
+2. 3
+3. 4
+4. 2
+5. 2
+6. 10
+   숫자로 변환할 수 없음
+   10
+   인덱스를 초과했음
+   10
+7. System.out.println("아이디가 존재하지 않습니다.");
+   System.out.println("패스워드가 틀립니다.");
+   throws Exception
+   throw new NotExistIDException()
+   throw new WrongPasswordException()
+8.
+
+<컬렉션>
+1. 4 / stack은 FILO
+2. 3
+3. 3
+4. 2
+5. Queue<Board>, LinkedList<>();
+6. Map<String, Integer>, HashMap<String, Integer>();
+7. public class BoardDao {
+}
