@@ -8,12 +8,11 @@ public class BoardDao {
     BoardDao() {}
 
     public List<Board> getBoardList() {
-        List<Board> dao = new ArrayList<>();
+        List<Board> list = new ArrayList<>();
         for (int i = 1; i <= 3; i++) {
-            Board bd = new Board("제목" + i, "내용" + i);
-            dao.add(bd);
+            list.add(new Board("제목" + i, "내용" + i));
         }
-        return dao;
+        return list;
     }
 
 }
