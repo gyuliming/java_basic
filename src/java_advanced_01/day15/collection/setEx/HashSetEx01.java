@@ -3,7 +3,7 @@ package java_advanced_01.day15.collection.setEx;
 import java.util.HashSet;
 import java.util.Set;
 
-public class HashSetEx02 {
+public class HashSetEx01 {
 
     public static void main(String[] args) {
         Set<String> set = new HashSet<String>();

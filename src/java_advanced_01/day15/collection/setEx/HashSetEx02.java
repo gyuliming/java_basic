@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class HashSetEx01 {
+public class HashSetEx02 {
 
     public static void main(String[] args) {
         Set<Member> set = new HashSet<Member>();
