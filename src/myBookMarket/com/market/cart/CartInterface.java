@@ -1,11 +1,12 @@
-package myBookMarket;
+package myBookMarket.com.market.cart;
 
+import java.util.ArrayList;
 import myBookMarket.com.market.bookitem.Book;
 
 // 장바구니 처리를 위한 메서드를 정의하기 위한 인터페이스
 public interface CartInterface {
     // 전체 도서 정보 목록 출력
-    void printBookList(Book[] p);
+    void printBookList(ArrayList<Book> p);
 
     // 장바구니에 담긴 도서의 ID와 장바구니에 담을 도서의 ID 비교 -> 일치 O : +1, true / 일치 X : false
     boolean isCartInBook(String id);

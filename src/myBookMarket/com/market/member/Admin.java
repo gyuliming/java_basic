@@ -1,4 +1,4 @@
-package myBookMarket;
+package myBookMarket.com.market.member;
 
 public class Admin extends Person {
 	private String id = "Admin";

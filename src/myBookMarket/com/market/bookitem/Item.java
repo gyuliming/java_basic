@@ -1,4 +1,4 @@
-package myBookMarket;
+package myBookMarket.com.market.bookitem;
 
 // 장바구니 항목 관리 추상 클래스
 public abstract class Item {
