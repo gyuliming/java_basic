@@ -1,5 +1,7 @@
 package myBookMarket;
 
+import myBookMarket.com.market.bookitem.Book;
+
 // 장바구니 항목 관리 클래스
 public class CartItem {
 //	private String[] itemBook = new String[7];
@@ -27,11 +29,11 @@ public class CartItem {
 		this.itemBook = itemBook;
 	}*/
 
-	public CartItem(Book itemBook, String bookID, int quantity, int totalPrice) {
-		this.itemBook = itemBook;
-		this.bookID = bookID;
-		this.quantity = quantity;
-		this.totalPrice = totalPrice;
+	public CartItem(Book booklist) {
+		this.itemBook = booklist;
+		this.bookID = booklist.getBookId();
+		this.quantity = 1;
+		updateTotalPrice();
 	}
 
 	public Book getItemBook() {

@@ -1,5 +1,7 @@
 package myBookMarket;
 
+import myBookMarket.com.market.bookitem.Book;
+
 // 장바구니 처리를 위한 메서드를 정의하기 위한 인터페이스
 public interface CartInterface {
     // 전체 도서 정보 목록 출력

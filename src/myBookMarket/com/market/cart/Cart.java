@@ -1,14 +1,14 @@
 package myBookMarket;
 
+import myBookMarket.com.market.bookitem.Book;
+
 // 장바구니 처리 클래스
 public class Cart implements CartInterface {
     static final int NUM_BOOK = 3;
     CartItem[] mCartItem = new CartItem[NUM_BOOK];
     static int mCartCount = 0;
 
-    public Cart() {
-
-    }
+    public Cart() {}
 
     // 전체 도서 정보 목록 출력
     @Override
@@ -23,12 +23,6 @@ public class Cart implements CartInterface {
             System.out.println(booklist[i].getReleaseDate() + " | ");
             System.out.println("");
         }
-    }
-
-    // 장바구니에 담긴 도서의 ID와 장바구니에 담을 도서의 ID 비교 -> 일치 O : +1, true / 일치 X : false
-    @Override
-    public boolean isCartInBook(String id) {
-        return false;
     }
 
     // 장바구니 항목 관리 클래스 CartItem 에 도서 정보 등록
@@ -74,6 +68,7 @@ public class Cart implements CartInterface {
         System.out.println("---------------------------------------");
     }
 
+    // 장바구니에 담긴 도서의 ID와 장바구니에 담을 도서의 ID 비교 -> 일치 O : +1, true / 일치 X : false
     // 장바구니가 비어있는지 확인
     public boolean isCartInBook(String bookId) {
         boolean flag = false;
