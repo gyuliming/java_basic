@@ -16,7 +16,9 @@ public class FlatMapEx01 {
                 Arrays.asList("h", "i")
         );
         List<String> allNames = listOfLists.stream()
+                // 1:N 평탄화
                 .flatMap(Collection::stream)
                 .collect(Collectors.toList());
+        System.out.println(allNames);
     }
 }

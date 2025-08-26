@@ -15,7 +15,7 @@ public class SortedEx {
         List<String> sortedNames = names.stream().sorted().toList();
         System.out.println(sortedNames);
 
-        // 내림차순 정렬
+        // 역순 정렬
         List<String> sortedNames1 = names.stream().sorted(Comparator.reverseOrder()).toList();
         System.out.println(sortedNames1);
 

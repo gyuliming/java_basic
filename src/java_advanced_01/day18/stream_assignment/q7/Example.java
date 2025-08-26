@@ -2,6 +2,7 @@ package java_advanced_01.day18.stream_assignment.q7;
 
 import java.util.Arrays;
 import java.util.List;
+// import java.util.stream.Collectors;
 
 public class Example {
     public static void main(String[] args) {
@@ -10,6 +11,10 @@ public class Example {
                 new Member("김나리", "디자이너"),
                 new Member("신용권", "개발자")
         );
+
+        // List<Member> developers = list.stream()
+        //          .filter(member -> member.getJob().equals("개발자"))
+        //          .collect(Collectors.toList());
 
         List<Member> developers = list.stream()
                 .filter(job -> job.getJob().equals("개발자"))

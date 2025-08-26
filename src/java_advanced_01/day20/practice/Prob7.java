@@ -9,8 +9,7 @@ public class Prob7 {
         File file = new File("C:/study/java_basic/src/java_advanced_01/day20/practice/copy.jpg");
 
         if (file.exists()) {
-            long size = file.length();
-            System.out.println("파일 크기 : " + size + " bytes");
+            System.out.println("파일 크기 : " + file.length() + " bytes");
         } else {
             System.out.println("파일이 존재하지 않습니다.");
         }
