@@ -1,20 +1,37 @@
 package Team_mission_v1;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.util.List;
+
 
 @Getter
 @Setter
-@ToString
 public class Student implements Serializable {
-    private static final long serialVersionUID = 1;
+    private static final long serialVersionUID = 1L;
     private String name;
-    private int[] record; // 과목 점수 배열, 길이 4로 보임
+    private List<Integer> record; // 과목 점수: Integer
     private int total;
-    private float average;
+    private double average;
     private String grade;
 
+    public Student(String name, List<Integer> record) {
+        this.name = name;
+        this.record = record;
+        calculate();
+    }
+
+    private void calculate() {
+        this.total = record.stream().mapToInt(Integer::intValue).sum();
+        this.average = total / (double) record.size();
+        if (average >= 90) this.grade = "A";
+        else if (average >= 80) this.grade = "B";
+        else this.grade = "C";
+    }
+
+    @Override
+    public String toString() {
+        return String.format("=> 저장됨: %s (총점=%d, 평균=%.1f, 학점=%s)\n", getName(), getTotal(), getAverage(), getGrade());
+    }
 }
+
